@@ -18,10 +18,10 @@ body {
 }
 
 .dashboard {
-    margin-top: 25px;
+    margin-top: 5px;
     margin-left: 200px;
     font-size: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     flex-direction: row;
     display: flex;
     align-items: center;
@@ -36,6 +36,7 @@ ul{
 .profile-image{
     margin-top: 20px;
     display: block;
+    border-radius: 70%;
 }
 
 .color-change {
@@ -62,23 +63,74 @@ a:hover{
     font-size: 12px;
     font-family: "GmarketSans_Medium";
     font-style: italic;
-    
 }
 
 .slider{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
+
 .custom-button{
-    align-items: center;
-    color: white;
+    display: inline-block;
+    text-align: center;
+    background-color: white;
     size: 10px 10px;
     padding: 10px;
-    border-color: white;
-    border-radius: 70%;
+    margin-left: 70px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-button {
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    color: #000;
 }
 
 .custom-button:active {
     color: #3a405e;
+}
+
+.info-container {
+    max-width: 800px;
+    margin: 0 100px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.info-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+.info-left, .info-right {
+    flex: 1;
+}
+
+.info-left h3, .info-right h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 0.8cm;
+}
+
+.info-right {
+    padding-left: 70px;
+    margin-top: 90px;
+    border-left: 2px solid #ddd;
+}
+
+.title {
+    font-size: 25px;
+}
+
+h3 {
+    line-height: 0.8cm;
 }
 
 @font-face {
@@ -97,13 +149,18 @@ h2 {
     margin: 0;
 }
 
+.info {
+    height: 150px;
+    display: inline-block;
+    margin-left: 30px;
+}
+
 h4 {
     font-family: "GmarketSans_Bold";
-    height: 150px;
     font-size: 20px;
 }
 
-span {
-    font-family: "GmarketSans_Medium";
-    margin: 5%;
+.project-container {
+    flex-direction: row;
+    display: flex;
 }
