@@ -1,0 +1,185 @@
+body {
+    background-color: #faf7f6;
+}
+
+.frame {
+    margin: 50px 400px;
+    display: flex;
+    flex-direction: column ;
+}
+
+.dashboard {
+    width: 400px;
+    height: 450px;
+    margin-top: 15px;
+    margin-left: 100px;
+    margin-bottom: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #BDC7F9;
+    border-radius: 5%;
+    padding: 20px;
+}
+
+.result-container {
+    width: 380px;
+    height: 60px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #A4ADD9;
+    box-shadow: 3px 3px 5px -3px inset;
+}
+
+.clear-keys {
+    justify-content: space-between;
+    display: flex;
+}
+
+.clear-key {
+    border-radius: 10px;
+    width: 175px;
+    height: 15px;
+    background-color: #8E95BA;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin-bottom: 7px;
+    font-size: 17px;
+    box-shadow: black;
+    font-family: "GmarketSans_Bold";
+    box-shadow: 5px 5px 10px -5px gray;
+}
+
+.num-oper-container {
+    display: flex;
+    justify-content: center;
+}
+
+.numbers-container {
+    padding: 5px;
+    width: 250px;
+    height: 315px;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.numbers {
+    width: 60px;
+    height: 60px;
+    background-color: #8E95BA;
+    border-radius: 10px;
+    font-size: 27px;
+    display: flex;
+    justify-content:center; 
+    align-items: center;
+    padding: 5px;
+    color: white;
+    font-family: "GmarketSans_Medium";
+    box-shadow: 5px 5px 10px -5px gray;
+}
+
+.operation-container {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    height: 315px;
+    width: 70px;
+    align-items: center;
+    padding: 7px;
+}
+
+.addition {
+    width: 65px;
+    height: 65px;
+    background-color: #8E95BA;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content:center; 
+    align-items: center;
+    color: white;
+    font-family: "GmarketSans_Medium";
+    box-shadow: 5px 5px 10px -5px gray;
+}
+
+.subtraction {
+    width: 65px;
+    height: 65px;
+    background-color: #8E95BA;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    font-family: "GmarketSans_Medium";
+    box-shadow: 5px 5px 10px -5px gray;
+}
+
+.multiplication {
+    width: 65px;
+    height: 65px;
+    background-color: #8E95BA;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    font-family: "GmarketSans_Medium";
+    border-color: lightslategrey;
+    box-shadow: 5px 5px 10px -5px gray;
+}
+
+.division {
+    width: 65px;
+    height: 65px;
+    background-color: #8E95BA;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    font-family: "GmarketSans_Medium";
+    border-color: lightslategrey;
+    box-shadow: 5px 5px 10px -5px gray;
+}
+
+.equal-container {
+    height: 315px;
+    width: 70px;
+    padding: 7px;
+}
+
+.percent {
+    width: 65px;
+    height: 150px;
+    background-color: #8E95BA;
+    border-radius: 10px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    font-family: "GmarketSans_Medium";
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 10px -5px gray;
+}
+
+.equal {
+    width: 65px;
+    height: 150px;
+    background-color: #8E95BA;
+    border-radius: 10px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    font-family: "GmarketSans_Medium";
+    box-shadow: 5px 5px 10px -5px gray;
+}
