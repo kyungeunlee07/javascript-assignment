@@ -39,17 +39,19 @@ body {
 
 .clear-key {
     border-radius: 10px;
-    width: 175px;
+    width: 185px;
     height: 15px;
     background-color: #8E95BA;
     text-align: center;
-    padding: 10px;
+    padding: 13px;
     color: white;
-    margin-bottom: 7px;
     font-size: 17px;
-    box-shadow: black;
     font-family: "GmarketSans_Bold";
     box-shadow: 5px 5px 10px -5px gray;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 7px;
 }
 
 .num-oper-container {
