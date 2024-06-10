@@ -30,6 +30,23 @@ body {
     border-radius: 10px;
     background-color: #A4ADD9;
     box-shadow: 3px 3px 5px -3px inset;
+    text-align: right;
+    align-items: center;
+    display: flex;
+    
+}
+
+input{
+    text-align: right;
+    border:none;
+    background-color: #A4ADD9;
+    font-size: 45px;
+    width: 340px;
+    font-family: "LCD2B";
+}
+
+input:focus {
+    outline:none;
 }
 
 .clear-keys {

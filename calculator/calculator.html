@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"></script>
     <link href="calculator_style.css" rel="stylesheet" type="text/css"> 
     <link href="fonts.css" rel="stylesheet" type="text/css">
 </head>
@@ -11,10 +12,12 @@
     <div class="frame"> 
         <div class="dashboard">
             <div class="result-container">
+                <input type="text" id="display">
 
+                <input type="text" id="result">
             </div>
             <div class="clear-keys">
-                <button class="clear-key">
+                <button class="clear-key" onclick="reset()">
                     AC
                 </button>
                 <button class="clear-key">
@@ -23,62 +26,62 @@
             </div>
             <div class="num-oper-container"> 
                 <div class="numbers-container">
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('7')">
                         7
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('8')">
                         8
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('9')">
                         9
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('4')">
                         4
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('5')">
                         5
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('6')">
                         6
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('1')">
                         1
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('2')">
                         2  
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('3')">
                         3
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('0')">
                         0  
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('00')">
                         00 
                     </button>
-                    <button class="numbers">
+                    <button class="numbers" onclick="add('.')">
                         .
                     </button>
                 </div>
                 <div class="operation-container">
-                    <button class="addition"> 
+                    <button class="addition" onclick="add('+')"> 
                         +
                     </button>
-                    <button class="subtraction">
-                        −
+                    <button class="subtraction" onclick="add('-')">
+                        -
                     </button>
-                    <button class="multiplication">
-                        ×
+                    <button class="multiplication" onclick="add('x')">
+                        x
                     </button>
-                    <button class="division">
+                    <button class="division" onclick="add('÷')">
                         ÷
                     </button>
                 </div>
                 <div class="equal-container"> 
-                    <button class="percent">
+                    <button class="percent" onclick="add('%')">
                         %
                     </button>
-                    <button class="equal">
+                    <button class="equal" onclick="calculate()">
                         =
                     </button>
                 </div>
@@ -88,3 +91,36 @@
     </div>
 </body>
 </html>
+
+<script>
+    var numberClicked = false;
+    function add(char) {
+        if(numberClicked==false){
+            if(isNaN(char)==true){}
+                else{
+                    document.getElementById('display').value += char;
+                }
+            }else{
+                document.getElementById('display').value += char;
+            }
+
+        if(isNaN(char) == true){ 
+            numberClicked = false;
+        }else
+            {numberClicked = true;
+        }
+    }
+
+    function calculate() {
+        var display = document.getElementById('display');
+        var result = math.evaluate(display.value);
+        document.getElementById('result').value = result;
+        console.log(result);
+    }
+
+    function reset() {
+        document.getElementById('display').value ="";
+        document.getElementById('result').value = "";
+    }
+
+</script> 
