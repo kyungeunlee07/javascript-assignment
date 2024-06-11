@@ -12,15 +12,16 @@
     <div class="frame"> 
         <div class="dashboard">
             <div class="result-container">
+                <input type="text" id="result" readonly>
+            </div>
+            <div class="display-container">
                 <input type="text" id="display">
-
-                <input type="text" id="result">
             </div>
             <div class="clear-keys">
-                <button class="clear-key" onclick="reset()">
+                <button class="clear-key" id="reset-button">
                     AC
                 </button>
-                <button class="clear-key">
+                <button class="clear-key" id="backspace-button">
                     CE
                 </button>
             </div>
@@ -81,7 +82,7 @@
                     <button class="percent" onclick="add('%')">
                         %
                     </button>
-                    <button class="equal" onclick="calculate()">
+                    <button class="equal" id="equal-button">
                         =
                     </button>
                 </div>
@@ -94,6 +95,9 @@
 
 <script>
     var numberClicked = false;
+    var isOperatorClicked = false;
+    var currentInput = "";
+
     function add(char) {
         if(numberClicked==false){
             if(isNaN(char)==true){}
@@ -111,16 +115,25 @@
         }
     }
 
-    function calculate() {
-        var display = document.getElementById('display');
-        var result = math.evaluate(display.value);
-        document.getElementById('result').value = result;
-        console.log(result);
-    }
+    document.getElementById("equal-button").addEventListener("click", function() {
+        var display = document.getElementById("display");
+        var result = math.evaluate(display.value);        
+        var displayResult = document.getElementById("result");
+        displayResult.value = result;
+        document.querySelector('.result-container').style.display = 'block';
+        document.querySelector('.display-container').style.display = 'none';
+    });
 
-    function reset() {
-        document.getElementById('display').value ="";
+    document.getElementById("reset-button").addEventListener("click", function() {
+        document.getElementById('display').value = "";
         document.getElementById('result').value = "";
-    }
+        document.querySelector('.result-container').style.display = 'none';
+        document.querySelector('.display-container').style.display = 'block';
+    });
+
+    document.getElementById("backspace-button").addEventListener("click", function() {
+        var display = document.getElementById("display");
+        display.value = display.value.substring(0, display.value.length - 1);
+    });
 
 </script> 

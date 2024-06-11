@@ -22,7 +22,7 @@ body {
     padding: 20px;
 }
 
-.result-container {
+.display-container {
     width: 380px;
     height: 60px;
     margin-bottom: 10px;
@@ -36,6 +36,19 @@ body {
     
 }
 
+.result-container {
+    display: none;
+    width: 380px;
+    height: 60px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #A4ADD9;
+    box-shadow: 3px 3px 5px -3px inset;
+    text-align: right;
+    align-items: center;
+}
+
 input{
     text-align: right;
     border:none;
@@ -43,10 +56,19 @@ input{
     font-size: 45px;
     width: 340px;
     font-family: "LCD2B";
+    margin-top: 7px;
 }
 
 input:focus {
     outline:none;
+}
+
+button:active {
+    background-color: darkgrey;
+}
+
+.hidden {
+    display: none;
 }
 
 .clear-keys {
