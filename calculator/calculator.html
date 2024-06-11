@@ -4,83 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link href="calculator_style.css" rel="stylesheet" type="text/css"> <link>
-    <link href="fonts.css" rel="stylesheet" type="text/css"> <link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"></script>
+    <link href="calculator_style.css" rel="stylesheet" type="text/css"> 
+    <link href="fonts.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="frame"> 
         <div class="dashboard">
             <div class="result-container">
-
+                <input type="text" id="result" readonly>
+            </div>
+            <div class="display-container">
+                <input type="text" id="display">
             </div>
             <div class="clear-keys">
-                <div class="clear-key">
+                <button class="clear-key" id="reset-button">
                     AC
-                </div>
-                <div class="clear-key">
+                </button>
+                <button class="clear-key" id="backspace-button">
                     CE
-                </div>
+                </button>
             </div>
             <div class="num-oper-container"> 
                 <div class="numbers-container">
-                    <div class="numbers">
+                    <button class="numbers" onclick="add('7')">
                         7
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('8')">
                         8
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('9')">
                         9
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('4')">
                         4
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('5')">
                         5
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('6')">
                         6
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('1')">
                         1
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('2')">
                         2  
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('3')">
                         3
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('0')">
                         0  
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('00')">
                         00 
-                    </div>
-                    <div class="numbers">
+                    </button>
+                    <button class="numbers" onclick="add('.')">
                         .
-                    </div>
+                    </button>
                 </div>
                 <div class="operation-container">
-                    <div class="addition"> 
+                    <button class="addition" onclick="add('+')"> 
                         +
-                    </div>
-                    <div class="subtraction">
-                        −
-                    </div>
-                    <div class="multiplication">
-                        ×
-                    </div>
-                    <div class="division">
+                    </button>
+                    <button class="subtraction" onclick="add('-')">
+                        -
+                    </button>
+                    <button class="multiplication" onclick="add('x')">
+                        x
+                    </button>
+                    <button class="division" onclick="add('÷')">
                         ÷
-                    </div>
+                    </button>
                 </div>
                 <div class="equal-container"> 
-                    <div class="percent">
+                    <button class="percent" onclick="add('%')">
                         %
-                    </div>
-                    <div class="equal">
+                    </button>
+                    <button class="equal" id="equal-button">
                         =
-                    </div>
+                    </button>
                 </div>
             </div>
             
@@ -88,3 +92,48 @@
     </div>
 </body>
 </html>
+
+<script>
+    var numberClicked = false;
+    var isOperatorClicked = false;
+    var currentInput = "";
+
+    function add(char) {
+        if(numberClicked==false){
+            if(isNaN(char)==true){}
+                else{
+                    document.getElementById('display').value += char;
+                }
+            }else{
+                document.getElementById('display').value += char;
+            }
+
+        if(isNaN(char) == true){ 
+            numberClicked = false;
+        }else
+            {numberClicked = true;
+        }
+    }
+
+    document.getElementById("equal-button").addEventListener("click", function() {
+        var display = document.getElementById("display");
+        var result = math.evaluate(display.value);        
+        var displayResult = document.getElementById("result");
+        displayResult.value = result;
+        document.querySelector('.result-container').style.display = 'block';
+        document.querySelector('.display-container').style.display = 'none';
+    });
+
+    document.getElementById("reset-button").addEventListener("click", function() {
+        document.getElementById('display').value = "";
+        document.getElementById('result').value = "";
+        document.querySelector('.result-container').style.display = 'none';
+        document.querySelector('.display-container').style.display = 'block';
+    });
+
+    document.getElementById("backspace-button").addEventListener("click", function() {
+        var display = document.getElementById("display");
+        display.value = display.value.substring(0, display.value.length - 1);
+    });
+
+</script> 

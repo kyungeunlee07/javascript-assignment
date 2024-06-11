@@ -22,7 +22,7 @@ body {
     padding: 20px;
 }
 
-.result-container {
+.display-container {
     width: 380px;
     height: 60px;
     margin-bottom: 10px;
@@ -30,6 +30,45 @@ body {
     border-radius: 10px;
     background-color: #A4ADD9;
     box-shadow: 3px 3px 5px -3px inset;
+    text-align: right;
+    align-items: center;
+    display: flex;
+    
+}
+
+.result-container {
+    display: none;
+    width: 380px;
+    height: 60px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #A4ADD9;
+    box-shadow: 3px 3px 5px -3px inset;
+    text-align: right;
+    align-items: center;
+}
+
+input{
+    text-align: right;
+    border:none;
+    background-color: #A4ADD9;
+    font-size: 45px;
+    width: 340px;
+    font-family: "LCD2B";
+    margin-top: 7px;
+}
+
+input:focus {
+    outline:none;
+}
+
+button:active {
+    background-color: darkgrey;
+}
+
+.hidden {
+    display: none;
 }
 
 .clear-keys {
@@ -39,17 +78,19 @@ body {
 
 .clear-key {
     border-radius: 10px;
-    width: 175px;
+    width: 185px;
     height: 15px;
     background-color: #8E95BA;
     text-align: center;
-    padding: 10px;
+    padding: 13px;
     color: white;
-    margin-bottom: 7px;
     font-size: 17px;
-    box-shadow: black;
     font-family: "GmarketSans_Bold";
     box-shadow: 5px 5px 10px -5px gray;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 7px;
 }
 
 .num-oper-container {
