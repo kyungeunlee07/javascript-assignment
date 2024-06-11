@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link href="alarm_style.css" rel="stylesheet" type="text/css"> 
+    <link href="fonts.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="frame"> 
+        <div class="time-alarm-container">
+            <div class="time-battery-container"> 
+                <text> 현재 시간</text>
+                <div class="battery-percent" > 
+                <text class="battery"> 배터리 :  </text>
+                    <text class="left-battery"> 78% </text>
+                </div>
+            </div>
+
+            <div class="current-time-container">
+                <text class="current-time"> 2024-07-01 13:00:08 </text>
+            </div>
+
+            <text style="margin-top: 20px;"> 알람 </text>
+            <div class="alarm-setting-container">
+                <div class="hour-minute-second">
+                    <input type="text" placeholder="  시" autofocus> </input>
+                    <text style="font-size: 20px; width: 5px; margin-top: 20px;" > : </text> 
+                    <input type="text" placeholder="  분" autofocus> </input>
+                    <text style="font-size: 20px; width: 5px; margin-top: 20px;"> : </text> 
+                    <input type="text" placeholder="  초" autofocus> </input>
+                </div>
+                <div class="set-alarm">
+                    <img class="add" src="../alarm/Plus.png"> 
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="alarm-container">
+            <text> 알람 현황 </text>
+            <div class="setted-alarms-container">
+                <div class="setted-alarm1"> 
+                    <div class="alarm1" > </div>
+                    <img class="delete" src="../alarm/Minus.png">
+                </div>
+                <div class="setted-alarm2"> 
+                    <div class="alarm2" > </div>
+                    <img class="delete" src="../alarm/Minus.png">
+                </div>
+                <div class="setted-alarm3"> 
+                    <div class="alarm3" > </div>
+                    <img class="delete" src="../alarm/Minus.png">
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
+

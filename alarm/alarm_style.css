@@ -1,0 +1,166 @@
+body {
+    background-color: #FFEFEF;
+}
+
+.frame {
+    margin: 150px 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.time-alarm-container {
+    margin-top: 50px;
+    margin-right: 15px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    height: 250px;
+    display: flex;
+}
+
+.setted-alarm-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 300px;
+}
+
+text {
+    font-family: "GmarketSans_Bold";
+    font-size: 30px;
+    color : #E8BEC0;
+}
+
+.battery {
+    margin-right: 7px;
+    font-size: 20px;
+    display: flex;
+    align-items: end;
+    justify-content: center; 
+}
+
+.left-battery {
+    margin-right: 7px;
+    font-size: 20px;
+    display: flex;
+    align-items: end;
+    justify-content: center; 
+}
+
+.battery-percent {
+    font-family: "GmarketSans_Bold";
+    font-size: 20px;    
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center; 
+    color : #E8BEC0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.current-time-container {
+    width: 400px;
+    height: 100px;
+    background-color: #E8BEC0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 10px;
+}
+
+.current-time {
+    font-family: LCD2B;
+    font-size: 38px;
+    color : #FFF4F4;
+    margin-top: 5px;
+}
+
+.alarm-setting-container {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.time-battery-container {
+    margin-top: 30px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hour-minute-second {
+    display : grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 50px;
+    width: 350px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+input {
+    font-family: "GmarketSans_Bold";
+    font-size: 20px; 
+    height: 50px;
+    width: 90px;
+    background-color: #E8BEC0;
+    border: #E8BEC0;
+    border-radius: 20px;
+    margin-right: 5px;
+    color: #FFF4F4;
+    align-content: center;
+    margin-left: 3px;
+    padding-inline: 7px;
+    border: none;
+}
+input::placeholder {
+    color: #F3EFEF;
+}
+
+input:focus {
+    outline:none;
+}
+
+a {
+    font-size: 30px;
+}
+
+.add {
+    width: 45px;
+    height: 45px;
+    margin-top: 15px;
+}
+
+.setted-alarms-container {
+    width: 400px;
+    height: 300px;
+    background-color: #E46C74;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: 10px;
+}
+
+.setted-alarm1, .setted-alarm3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.setted-alarm2 {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.delete { 
+    display: flex;
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+}
