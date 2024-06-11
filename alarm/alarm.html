@@ -6,6 +6,7 @@
     <title>Alarm</title>
     <link href="alarm_style.css" rel="stylesheet" type="text/css"> 
     <link href="fonts.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 </head>
 <body>
     <div class="frame"> 
@@ -19,7 +20,18 @@
             </div>
 
             <div class="current-time-container">
-                <text class="current-time"> 2024-07-01 13:00:08 </text>
+                <div class="current-time"> </div>
+                <script>
+                    function displayCurrentTime() {
+                        var now = moment().format('YYYY-MM-DD HH:mm:ss');
+                        document.querySelector('.current-time').textContent = now;
+                    }
+                
+                    document.addEventListener('DOMContentLoaded', function() {
+                        displayCurrentTime();
+                        setInterval(displayCurrentTime, 1000);
+                    });
+                </script>
             </div>
 
             <text style="margin-top: 20px;"> 알람 </text>
@@ -54,10 +66,10 @@
                     <img class="delete" src="../alarm/Minus.png">
             </div>
             </div>
-
         </div>
-
     </div>
 </body>
 </html>
+
+
 
