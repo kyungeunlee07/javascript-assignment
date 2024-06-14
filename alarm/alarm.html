@@ -6,6 +6,7 @@
     <title>Alarm</title>
     <link href="alarm_style.css" rel="stylesheet" type="text/css"> 
     <link href="fonts.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 </head>
 <body>
     <div class="frame"> 
@@ -14,50 +15,111 @@
                 <text> 현재 시간</text>
                 <div class="battery-percent" > 
                 <text class="battery"> 배터리 :  </text>
-                    <text class="left-battery"> 78% </text>
+                    <text class="left-battery"> 100% </text>
                 </div>
             </div>
 
             <div class="current-time-container">
-                <text class="current-time"> 2024-07-01 13:00:08 </text>
+                <div class="current-time"> </div>
             </div>
 
             <text style="margin-top: 20px;"> 알람 </text>
             <div class="alarm-setting-container">
                 <div class="hour-minute-second">
-                    <input type="text" placeholder="  시" autofocus> </input>
+                    <input type="text" id="hour" placeholder="  시" autofocus> </input>
                     <text style="font-size: 20px; width: 5px; margin-top: 20px;" > : </text> 
-                    <input type="text" placeholder="  분" autofocus> </input>
+                    <input type="text" id="minute" placeholder="  분" autofocus> </input>
                     <text style="font-size: 20px; width: 5px; margin-top: 20px;"> : </text> 
-                    <input type="text" placeholder="  초" autofocus> </input>
+                    <input type="text" id="second" placeholder="  초" autofocus> </input>
                 </div>
                 <div class="set-alarm">
-                    <img class="add" src="../alarm/Plus.png"> 
+                    <button class="add" onclick="addAlarm()"> </button>
                 </div>
             </div>
         </div>
-        
-        
+           
         <div class="alarm-container">
             <text> 알람 현황 </text>
             <div class="setted-alarms-container">
                 <div class="setted-alarm1"> 
                     <div class="alarm1" > </div>
-                    <img class="delete" src="../alarm/Minus.png">
+                    <button class="delete" onclick="deleteAlarm(1)"> 
                 </div>
                 <div class="setted-alarm2"> 
                     <div class="alarm2" > </div>
-                    <img class="delete" src="../alarm/Minus.png">
+                    <button class="delete" onclick="deleteAlarm(2)"> </button>
                 </div>
                 <div class="setted-alarm3"> 
                     <div class="alarm3" > </div>
-                    <img class="delete" src="../alarm/Minus.png">
+                    <button class="delete" onclick="deleteAlarm(3)"> </button>
+                </div>
             </div>
-            </div>
-
         </div>
-
     </div>
 </body>
 </html>
+
+
+
+<script>
+
+    function displayCurrentTime() {
+        var now = moment().format('YYYY-MM-DD HH:mm:ss');
+        document.querySelector('.current-time').textContent = now;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        displayCurrentTime();
+        setInterval(displayCurrentTime, 1000);
+    });
+
+    function addAlarm() {
+        const hour = document.getElementById('hour').value;
+        const minute = document.getElementById('minute').value;
+        const second = document.getElementById('second').value;
+
+        if (!hour || !minute || !second) {
+                alert("시, 분, 초를 모두 입력해 주세요!");
+                return;
+        }
+
+        const alarmTime = `${hour}시간 ${minute}분 ${second}초 후`;
+
+        for (let i = 1; i <= 3; i++) {
+            const settedAlarm = document.querySelector(`.setted-alarm${i} .alarm${i}`);
+            if(settedAlarm.innerText === "") {
+                settedAlarm.innerText = alarmTime;
+                break;
+            } else if (i === 3) {
+                alert('3개 이상 알람을 설정할 수 없습니다. 다른 알람을 삭제한 후, 이용해주세요.');
+            }   
+        }
+    }
+
+    function deleteAlarm(alarmNumber) {
+        let settedAlarm = document.querySelector(`.setted-alarm${alarmNumber} .alarm${alarmNumber}`);
+        settedAlarm.innerText = "";
+    }
+
+    function updateBattery() {
+        var currentBatteryText = document.querySelector('.left-battery');
+        var currentBattery = parseInt(currentBatteryText.textContent.replace('%', ''), 10);
+        var currentTimeContainer = document.querySelector('.current-time-container');
+        var currentTime = moment().format('YYYY-MM-DD HH:mm:ss');
+
+        if (currentBattery === 0) {
+            currentTime.style.color = "black";
+        } else {
+            currentBattery -= 1;
+            currentBatteryText.textContent = currentBattery + '%';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        displayCurrentTime();
+        setInterval(displayCurrentTime, 1000);
+        setInterval(updateBattery, 1000);
+    });
+  
+</script>
 

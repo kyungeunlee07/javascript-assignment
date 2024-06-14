@@ -127,9 +127,15 @@ a {
 }
 
 .add {
-    width: 45px;
-    height: 45px;
-    margin-top: 15px;
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    background: url("../alarm/Plus.png") no-repeat;
+    border-color: #FFEFEF;
+    box-shadow: none;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .setted-alarms-container {
@@ -158,9 +164,22 @@ a {
     align-items: center;
 }
 
+.alarm1, .alarm2, .alarm3 {
+    font-family: "GmarketSans_Bold";
+    font-size: 35px; 
+    margin-left: 10px;
+    color: #FFF4F4;
+}
+
 .delete { 
     display: flex;
     margin-right: 10px;
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
+    background: url("../alarm/Minus.png") no-repeat;
+    border-color: #FFEFEF;
+    box-shadow: none;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
 }
