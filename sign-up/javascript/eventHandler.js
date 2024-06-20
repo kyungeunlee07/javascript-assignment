@@ -1,65 +1,11 @@
-function validation() {
-    const submitButton = document.querySelector('.submit-button');
-
-    submitButton.addEventListener('click', function() {
-        if (!isDuplicatedIdChecked()) {
-            alert('아이디 중복체크 여부를 확인해 주세요.');
-            return false;
-        } else if (!isBlank()) {
-            alert('내용을 빠짐없이 입력해 주세요.');
-            return false;
-        } else if (!isValidId() || !isValidPassword()) {
-            alert('입력한 내용을 확인해 주세요.');
-            return false;
-        } else {
-            registerMember();
-            return true;
-        }
-    });
-}
-
-function registerMember() {
-    var idInput = document.querySelector('id-input');
-    var userArr = ['abcd123', 'hi123', 'hi1234', '54321hi', '2130koo', 'kk7890'];
-
-    userArr.push(idInput);
-    alert('회원가입이 완료되었습니다!');
-    console.log(userArr);
-}
-
-function isDuplicatedIdChecked() {
-    isChecked = false;
-
-    var idInput = document.querySelector('.id-input');
-    var id = idInput.value.trim();
-    var userArr = ['abcd123!', 'hi123*', 'hi1234?', '54321hi!!', '2130koo^', 'kk7890!'];
-
-    if (!isValidId()) {
-        idInput.style.color = 'red';
-        return false;
-    } else if (userArr.includes(id)) {
-        alert('이미 사용 중인 ID입니다.');
-        idInput.style.color = 'red';
-        return false;
-    } else {
-        alert('사용 가능한 ID입니다.');
-        idInput.style.color = 'green';
-        return true;
-    }
-}
+var userArr = ['abcd123', 'hi123', 'hi1234', '54321hi', '2130koo', 'kk7890'];
 
 function isBlank() {
     var idInput = document.querySelector('.id-input');
     var pwInput = document.querySelector('.pw-input');
 
-    if(idInput.value.length == 0) {
+    if (idInput === '' || pwInput === '') {
         alert("아이디와 비밀번호를 모두 입력해주세요.");
-        document.idInput.focus();
-        return false;
-    }
-    else if(pwInput.value == "") {
-        alert("비밀번호를 입력해주세요.");
-        document.pwInput.focus();
         return false;
     }
     else {
@@ -90,7 +36,6 @@ function isValidId() {
 
 function isValidPassword() {
     const inputPassword = document.querySelector('.pw-input').value;
-    
     var passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).{8,16}$/;
 
     if (passwordRegex.test(inputPassword) == true) 
@@ -100,3 +45,56 @@ function isValidPassword() {
 		inputPassword.style.color = 'red';
     }
 }
+
+function isDuplicatedIdChecked() {
+    isChecked = false;
+
+    var idInput = document.querySelector('.id-input');
+    var id = idInput.value.trim();
+    var userArr = ['abcd123!', 'hi123*', 'hi1234?', '54321hi!!', '2130koo^', 'kk7890!'];
+
+    if (!isValidId()) {
+        idInput.style.color = 'red';
+        return false;
+    } else if (userArr.includes(id)) {
+        alert('이미 사용 중인 ID입니다.');
+        idInput.style.color = 'red';
+        return false;
+    } else {
+        alert('사용 가능한 ID입니다.');
+        idInput.style.color = 'green';
+        return true;
+    }
+}
+
+function validation() {
+    const submitButton = document.querySelector('.submit-button');
+
+    submitButton.addEventListener('click', function() {
+        if (!isDuplicatedIdChecked()) {
+            alert('아이디 중복체크 여부를 확인해 주세요.');
+            return false;
+        } else if (!isBlank()) {
+            alert('내용을 빠짐없이 입력해 주세요.');
+            return false;
+        } else if (!isValidId() || !isValidPassword()) {
+            alert('입력한 내용을 확인해 주세요.');
+            return false;
+        } else {
+            registerMember();
+            return true;
+        }
+    });
+}
+
+function registerMember() {
+    var idInput = document.querySelector('.id-input').value;
+
+    userArr.push(idInput);
+    alert('회원가입이 완료되었습니다!');
+    console.log(userArr);
+}
+
+
+
+
