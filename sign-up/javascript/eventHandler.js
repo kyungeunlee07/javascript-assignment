@@ -51,7 +51,7 @@ function isDuplicatedIdChecked() {
 
     var idInput = document.querySelector('.id-input');
     var id = idInput.value.trim();
-    var userArr = ['abcd123!', 'hi123*', 'hi1234?', '54321hi!!', '2130koo^', 'kk7890!'];
+    var userArr = ['abcd123!', 'hi123456*', 'hii1234!?', '54321hi!!', '21300koo^', 'kkkk7890!'];
 
     if (!isValidId()) {
         idInput.style.color = 'red';
