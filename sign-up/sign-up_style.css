@@ -49,6 +49,12 @@ h4 {
     text-align: left;
 }
 
+.id-input::placeholder {
+    font-family: "GmarketSans_Medium";
+    font-size: 18px;
+    background-color: transparent;
+}
+
 .pw-container {
     display: flex;
     flex-direction: row;

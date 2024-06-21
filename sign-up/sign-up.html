@@ -7,6 +7,7 @@
     <link href="sign-up_style.css" rel="stylesheet" type="text/css"> 
     <link href="fonts.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/47886bbc6c.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="frame"> 
@@ -14,16 +15,17 @@
             <h1> SIGN UP </h1>
             <div class="id-container">
                 <h4> ID </h4>
-                <input class="id-input"> </input>
-                <button class="valid-check" value="중복 체크" > 중복체크  </button>
+                <input class="id-input" placeholder=" 영문자와 숫자가 반드시 포함되어야 합니다."> </input>
+                <button class="valid-check" value="중복 체크" onclick="isDuplicatedIdChecked()" > 중복체크 </button>
             </div>
             <div class="pw-container">
                 <h4> PW </h4>
                 <input class="pw-input" placeholder=" 영어와 특수문자 포함 8자 이상 입력하세요."> 
-                <i class="fa fa-eye fa-lg"></i>
             </div>
-            <button class="submit-button" value="submit" >Submit </button>
+            <button class="submit-button" value="submit" onclick="validation()" >Submit </button>
         </div>
     </div>
+
+    <script src="javascript/eventHandler.js"> </script>
 </body>
 </html>
